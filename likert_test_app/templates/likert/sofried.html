@@ -1,0 +1,164 @@
+{% extends "likert/base.html" %}
+{% load i18n static %}
+{% load url from future %}
+
+
+{% block extra_head %}
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}likert/bootstrap-star-rating/css/star-rating.min.css" media="screen, projector, print" type="text/css">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="jumbotron" align="middle">
+  <h1 align="middle">Harmonies of the Southern Plains.</h1>
+</div>
+
+
+
+<div class="container" align="center">
+        <div class="row" align="center">
+          <div class="col-md-5" align="center">
+
+          <h5>Youngbird @Shakopee2013</h5>
+          <p> Views - 5,007 <span style="padding-left:2em"> Likes - 22  <span style="padding-left:2em">  Dislikes - 2 </p>
+          <iframe  width="300" height="200" src="http://www.youtube.com/embed/736JU0laOOc" frameborder="0" allowfullscreen></iframe>
+
+          <form method="post" align="center">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+          </form>
+
+        <hr>
+
+        </div> <!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Sizzortail @Shakopee2013</h5>
+          <p> Views - 2,836 <span style="padding-left:2em"> Likes - 17  <span style="padding-left:2em">  Dislikes - 0 </p>
+          <iframe width="300" height="200" src="http://www.youtube.com/embed/N1ZqWmKCQtk" frameborder="0" allowfullscreen></iframe>
+
+          <form method="post" align="center">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+          </form>
+
+          <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Thunder Hill @GON2013</h5>
+          <p> Views - 18,953 <span style="padding-left:2em"> Likes - 101  <span style="padding-left:2em">  Dislikes - 5 </p>
+        <iframe width="300" height="200" src="http://www.youtube.com/embed/Bqzi98ot8CE" frameborder="0" allowfullscreen></iframe>
+
+        <form method="post" align="center">
+
+          {% csrf_token %}
+
+          {{ form.as_p }}
+
+          <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+        </form>
+
+        <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Cozad @GON2015</h5>
+          <p> Views - 4,432 <span style="padding-left:2em"> Likes - 32  <span style="padding-left:2em">  Dislikes - 2 </p>
+          <iframe width="300" height="200" src="http://www.youtube.com/embed/S11EicHnG7A" frameborder="0" allowfullscreen></iframe>
+
+          <form method="post" align="center">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+          </form>
+
+          <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Southern Style @GON2015</h5>
+          <p> Views - 1,162 <span style="padding-left:2em"> Likes - 6  <span style="padding-left:2em">  Dislikes - 1 </p>
+        <iframe width="300" height="200" src="http://www.youtube.com/embed/TlfvauXWyKg" frameborder="0" allowfullscreen></iframe>
+
+
+            <form method="post" align="center">
+
+              {% csrf_token %}
+
+              {{ form.as_p }}
+
+              <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+            </form>
+
+        <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Sizzortail @Shakopee2014</h5>
+          <p> Views - 1,731 <span style="padding-left:2em"> Likes - 8  <span style="padding-left:2em">  Dislikes - 0 </p>
+        <iframe width="300" height="200" src="http://www.youtube.com/embed/D4wY12dR7Pg" frameborder="0" allowfullscreen></iframe>
+
+        <form method="post" align="center">
+
+          {% csrf_token %}
+
+          {{ form.as_p }}
+
+          <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+        </form>
+
+        <hr>
+
+
+
+
+
+
+
+
+
+
+        </div><!--/.col-xs-6.col-lg-4-->
+      </div> <!--/row>-->
+    </div><!--/.col-xs-12.col-sm-9-->
+
+</div><!--/.container-->
+
+
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="{{ STATIC_URL }}likert/bootstrap-star-rating/js/star-rating.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $(".likert-field").rating();
+  });
+</script>
+
+{% endblock %}

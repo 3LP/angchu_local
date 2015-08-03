@@ -1,0 +1,156 @@
+{% extends "likert/base.html" %}
+{% load i18n static %}
+{% load url from future %}
+
+{% block extra_head %}
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}likert/bootstrap-star-rating/css/star-rating.min.css" media="screen, projector, print" type="text/css">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="jumbotron" align="middle">
+  <h1 align="middle"> Energy, Volume, Power.</h1>
+</div>
+
+
+<div class="container" align="center">
+        <div class="row" align="center">
+          <div class="col-md-5" align="center">
+          <h5>Northern Cree @Stanford2015</h5>
+          <p> Views - 3,356 <span style="padding-left:2em"> Likes - 15  <span style="padding-left:2em">  Dislikes - 0 </p>
+          <iframe  width="300" height="200" src="http://www.youtube.com/embed/ZkW5lO-S31k" frameborder="0" allowfullscreen></iframe>
+
+          <form method="post" align="center">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+          </form>
+
+        <hr>
+
+        </div> <!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Whitefish Jrs. Live 1996</h5>
+          <p> Views - 33,862 <span style="padding-left:2em"> Likes - 119  <span style="padding-left:2em">  Dislikes - 6 </p>
+          <iframe width="300" height="200" src="http://www.youtube.com/embed/YBcw0lzQ7TM" frameborder="0" allowfullscreen></iframe>
+
+          <form method="post" align="center">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+          </form>
+
+          <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Assiniboine Cree 2012</h5>
+          <p> Views - 752 <span style="padding-left:2em"> Likes - 4  <span style="padding-left:2em">  Dislikes - 0 </p>
+        <iframe width="300" height="200" src="http://www.youtube.com/embed/C0rkALsxDsY" frameborder="0" allowfullscreen></iframe>
+
+        <form method="post" align="center">
+
+          {% csrf_token %}
+
+          {{ form.as_p }}
+
+          <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+        </form>
+
+
+        <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Meskwaki Nation @Mayetta2014</h5>
+          <p> Views - 12,539 <span style="padding-left:2em"> Likes - 94  <span style="padding-left:2em">  Dislikes - 0 </p>
+          <iframe width="300" height="200" src="http://www.youtube.com/embed/2KqU7mrHJT4" frameborder="0" allowfullscreen></iframe>
+
+          <form method="post" align="center">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+          </form>
+
+
+          <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Northern Cree @Julyamsh2013</h5>
+          <p> Views - 255,822 <span style="padding-left:2em"> Likes - 1  <span style="padding-left:2em">  Dislikes - 0 </p>
+        <iframe width="300" height="200" src="http://www.youtube.com/embed/ACtKuFYBuqw" frameborder="0" allowfullscreen></iframe>
+
+        <form method="post" align="center">
+
+          {% csrf_token %}
+
+          {{ form.as_p }}
+
+          <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+        </form>
+
+
+
+        <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+        <div class="col-md-5" align="center">
+          <h5>Whitefish Jrs. @TsuuT'ina2013</h5>
+          <p> Views - 21,417 <span style="padding-left:2em"> Likes - 113  <span style="padding-left:2em">  Dislikes - 2 </p>
+        <iframe width="300" height="200" src="http://www.youtube.com/embed/SoNRmZcYI8M" frameborder="0" allowfullscreen></iframe>
+
+        <form method="post" align="center">
+
+          {% csrf_token %}
+
+          {{ form.as_p }}
+
+          <button type="submit" class="btn btn-success btn-md">{% trans 'Save' %}</button>
+
+        </form>
+
+
+        <hr>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+      </div> <!--/row>-->
+    </div><!--/.col-xs-12.col-sm-9-->
+
+</div><!--/.container-->
+
+
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="{{ STATIC_URL }}likert/bootstrap-star-rating/js/star-rating.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $(".likert-field").rating();
+  });
+</script>
+
+{% endblock %}
