@@ -1,1 +1,1 @@
-web: gunicorn angchu.wsgi --log-file -
+web: gunicorn django14.wsgi --log-file -

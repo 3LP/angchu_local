@@ -4,7 +4,7 @@
 
 {% block extra_head %}
 
-  <link rel="stylesheet" href="{{ STATIC_URL }}likert/bootstrap-star-rating/css/star-rating.min.css" media="screen, projector, print" type="text/css">
+
 
 {% endblock %}
 
@@ -12,14 +12,40 @@
 
 {% block content %}
 
-
 <div class="jumbotron" align="middle">
   <h1 align="middle">Listen, judge.</h1>
-  <p align ="middle">High quality, LIVE Pow Wow music collected from Youtube using Big Data Analytics.</p>
+  <p align ="middle">High quality, LIVE Pow Wow music.</p>
 
 </div>
 
 
+
+<body class="index">
+  <div id="audio-player" class="audio-player-wrapper">
+
+    <div class="audio-player-image">
+      <span class="audio-player-song-name"></span>
+    </div>
+
+    <div class="audio-player-controls">
+
+      <span class="audio-player-button-wrappers">
+
+        <a role="button" class="audio-player-button audio-player-place-pause-button icon-play"> </a>
+
+        <a role="button" class="audio-player-button small icon-forward"></a>
+
+      </span>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+
+{% block scripts %}
 
 
 {% endblock %}

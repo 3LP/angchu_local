@@ -1,44 +1,31 @@
 import os
 import sys
-import dj_database_url
+
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 LIKERT_DIR = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)))
 
-sys.path.append(BASE_DIR)
-sys.path.append(LIKERT_DIR)
+#sys.path.append(BASE_DIR)
+# sys.path.append(LIKERT_DIR)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'p-hw2^%2@%2k5r(r2kbm_j6l_9#%djcp!46dgf=t6#l!g@xxw)'
 
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
-ADMINS = (
-    ('Jackson', 'jchiefel@ucsc.edu'),
-)
-
-
-
-
-
-
-# ALLOWED_HOSTS = ['http://127.0.0.1:8000/']
-
-# TEMPLATE_DEBUG = DEBUG
-
-# SECURITY WARNING: keep the secret key used in production secret!
 
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+    'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
     'NAME': 'downbeat',                      # Or path to database file if using sqlite3.
     # The following settings are not used with sqlite3:
-    'USER': 'admin_downbeat',
-    'PASSWORD': 'chaske420',
-    'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-    'PORT': '',                      # Set to empty string for default.
+    #'USER': 'admin_downbeat',
+    #'PASSWORD': 'chaske420',
+    #'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+    #'PORT': '',                      # Set to empty string for default.
     }
 }
 
@@ -115,16 +102,17 @@ ROOT_URLCONF = 'django14.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'django14.wsgi.application'
 
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'global_assets', 'templates'),
 )
+
 
 INSTALLED_APPS = [
     'likert_field',
     'likert_test_app',
     'suthern',
     'bootstrap3',
-    'toptracks',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -137,58 +125,7 @@ INSTALLED_APPS = [
     # 'django.contrib.admindocs',
 ]
 
-try:
-    import south
-except ImportError:
-    pass
-else:
-    INSTALLED_APPS += ['south']
 
-
-
-# Parse database configuration from $DATABASE_URL
-DATABASES['default'] = dj_database_url.config()
-
-# Enable Connection Pooling (if desired)
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
-
-
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
-}
 
 
 

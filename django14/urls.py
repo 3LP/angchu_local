@@ -13,6 +13,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='app/home.html'), name='home'),
-	url(r'^toptracks/', include(likert_test_app.urls)),
+	url(r'^categories/', include(likert_test_app.urls)),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+
